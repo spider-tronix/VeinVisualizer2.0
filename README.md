@@ -4,6 +4,14 @@ The project **Vein Visualizer** was started as an idea for **Sangam 2019**. The 
 
 We used Near Infrared Imaging techniques to enhance the visibility of the veins. A prototype was made and proof of the concept is verified. 
 
+### Input frame
+![Input frame](https://github.com/spider-tronix/VeinVisualizer2.0/blob/master/1.png)
+### Contrast adjustment frame
+![Contrast adjustment frame](https://github.com/spider-tronix/VeinVisualizer2.0/blob/master/1clahe.png)
+### Masked Output
+![Masked Output](https://github.com/spider-tronix/VeinVisualizer2.0/blob/master/1mask.png)
+
+
 # Vein Visualizer 2.0
 
 With the creation of prototype being successful, the process of developing and improving it comes next. Based on the suggestions given by the visitors of our Sangam stall, the project takes a new face. The new concept is to make the device movable and more flexible to use. Moreover the idea/device should be accessible easily and friendly to use. 
