@@ -20,7 +20,7 @@ So, we are moving towards **Smartphone** based solution, which will be able to  
 
 ## App development
 Since the project needs app development to be done, we are looking forward to take in people who are good at **Android** development and willing to work with **OpenCV** binders for Java.   The app developer will get a good insight on image processing techniques.
-
+Source code for the app can be found here: https://github.com/gouthamcm/Vien_Visualizer
 
 # Process Flow
 We shall be ideating on new features which are shall be possible with the android device. Optimizations will be taken care by the image processing team members, while the implementation of the optimizations in java/OpenCV binders will be done by the app developer.
