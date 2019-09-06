@@ -26,4 +26,20 @@ Source code for the app can be found here: https://github.com/gouthamcm/Vien_Vis
 We shall be ideating on new features which are shall be possible with the android device. Optimizations will be taken care by the image processing team members, while the implementation of the optimizations in java/OpenCV binders will be done by the app developer.
 The process will be continued till the app reaches final stage of maturity.
 
-## Interested people can join us.
+## TODO:
+### Code/Software:
+
+-  [x] Camera calibration for images.
+-  [x] Parameter variations and tuning.
+-  [ ] Finding k1, k2, k3 for specific screen.
+-  [ ] Optimizing Image Processing algorithm for better visuals.
+-  [ ] Merging modules together.
+-  [ ] Threading and further optimizations.
+  
+### Hardware:
+-  [x] Get the VR headset
+-  [ ] Get the Screen 
+-  [ ] Running Codes in RPi + Camera and benchmarking
+-  [ ] Adding driver/dependancies for Screen
+-  [ ] IR LED lighting setup
+-  [ ] 3D casing enclosure.
