@@ -3,7 +3,7 @@ This folder contains all the benchmarking scripts and parameters. The task is to
     
 ## TODO:
 -  [x] Add benchmarking video/dataset for comparison
--  [ ] Combine individual scripts into a single file
+-  [x] Combine individual scripts into a single file
 -  [ ] Compare video vs camera read performance
 -  [ ] Compare system performance vs rasperry pi performance
 -  [ ] Explore options for optimizing the code.
