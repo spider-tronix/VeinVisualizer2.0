@@ -42,7 +42,7 @@ with open("data.pickle", "rb") as handler:
     [objpoints, imgpoints] = pickle.load(handler)
 
 frame = None
-video_path = input("Enter path of video")
+video_path = input("Enter path of video : ")
 cap = cv2.VideoCapture(video_path)
 count = 0
 while cap.isOpened():
@@ -60,15 +60,11 @@ cv2.createTrackbar('k1', 'Bars', 1000, 2000, nothing)
 cv2.createTrackbar('k2', 'Bars', 1000, 2000, nothing)
 cv2.createTrackbar('k3', 'Bars', 1000, 2000, nothing)
 
-
-cap = cv2.VideoCapture(input("Enter path of video"))
+cap = cv2.VideoCapture(video_path)
 count = 0
 while cap.isOpened():
-    _, frame = cap.read()
-    count += 1
-    if count == 5:  # Taking the 5th frame of the video for initial values
-        break
-cap.release()
+    _, img = cap.read()
+
     k1 = dist[0, 0] - 0.1 + cv2.getTrackbarPos('k1', 'Bars') / 10000.0
     k2 = dist[0, 1] - 0.1 + cv2.getTrackbarPos('k2', 'Bars') / 10000.0
     k3 = dist[0, 4] - 0.01 + cv2.getTrackbarPos('k3', 'Bars') / 100000.0
@@ -81,10 +77,10 @@ cap.release()
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-    newcameramtx, roi = cv2.getOptimalNewCameraMatrix(new_mtx, new_dist, (w, h), 1, (w, h))
+    newcameramtx, roi = cv2.getOptimalNewCameraMatrix(mtx, new_dist, (w, h), 1, (w, h))
 
     # undistort
-    dst = cv2.undistort(img, new_mtx, new_dist, None, newcameramtx)
+    dst = cv2.undistort(img, mtx, new_dist, None, newcameramtx)
 
     # crop the image
     x, y, w, h = roi
@@ -95,12 +91,12 @@ cap.release()
 
     mean_error = 0
     for i in range(len(objpoints)):
-        imgpoints2, _ = cv2.projectPoints(objpoints[i], rvecs[i], tvecs[i], new_mtx, new_dist)
+        imgpoints2, _ = cv2.projectPoints(objpoints[i], rvecs[i], tvecs[i], mtx, new_dist)
         error = cv2.norm(imgpoints[i], imgpoints2, cv2.NORM_L2) / len(imgpoints2)
         mean_error += error
 
     print(f"Current Total Error: {mean_error / len(objpoints)}"
-          f"\nCurrent Camera Matrix : \n {ndtotext(new_mtx)}"
+          f"\nCurrent Camera Matrix : \n {ndtotext(mtx)}"
           f"\nCurrent Dist Matrix : \n {ndtotext(new_dist)}")
     time.sleep(0.1)
 
