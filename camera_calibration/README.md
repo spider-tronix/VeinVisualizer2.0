@@ -6,6 +6,31 @@ Due to radial distortion, straight lines will appear curved. Its effect is more 
 
 ![](https://opencv-python-tutroals.readthedocs.io/en/latest/_images/calib_radial.jpg)
 
+## Usage and File Hierarchy
+    .
+    ├── assets                  # Pictures used for Calibration                  
+    |    └── left01.jpg
+    |    └── left02.jpg
+    |    ...
+    |    └── left14.jpg
+    ├── my_dataset              # Manually collected dataset     
+    │    └── WIN_20190829_19_27_01_Pro.jpg
+    │    └── WIN_20190829_19_27_04_Pro.jpg
+    │    ...
+    │    └── WIN_20190829_19_27_37_Pro.jpg
+    ├── outputs                 # Processed Version of assets images         
+    |    └── left01.jpg
+    |    └── left02.jpg
+    |    ...
+    |    └── left14.jpg
+    ├── create_test_video.py    # Create video from assets                   
+    ├── final_video.py          # Calibration on Video          
+    ├── pic_slides.avi          # Created Video
+    ├── reprojection_error.py   # Calcualation of errors
+    ├── setup.py                # Create initial image and object points
+    ├── undistortion.py         # Calibration on Image with all params
+    └── README.md
+
 ## Camera Matrix
 Intrinsic parameters are specific to a camera. It includes information like focal length $(f_x,f_y)$, optical centers $(c_x, c_y)$ etc. It is also called camera matrix. It depends on the camera only, so once calculated, it can be stored for future purposes. It is expressed as a 3x3 matrix
 
