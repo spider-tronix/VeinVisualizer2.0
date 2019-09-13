@@ -42,11 +42,14 @@ with open("data.pickle", "rb") as handler:
     [objpoints, imgpoints] = pickle.load(handler)
 
 frame = None
-video_path = input("Enter path of video : ")
+video_path = input("Enter path of video(defaults to pic_slides.avi) : ") or 'pic_slides.avi'
 cap = cv2.VideoCapture(video_path)
 count = 0
 while cap.isOpened():
-    _, frame = cap.read()
+    r, frame = cap.read()
+    if not r:
+        print("Invalid Video!")
+        exit(-1)
     count += 1
     if count == 5:  # Taking the 5th frame of the video for initial values
         break
@@ -62,6 +65,7 @@ cv2.createTrackbar('k3', 'Bars', 1000, 2000, nothing)
 
 cap = cv2.VideoCapture(video_path)
 count = 0
+
 while cap.isOpened():
     _, img = cap.read()
 
@@ -69,7 +73,7 @@ while cap.isOpened():
     k2 = dist[0, 1] - 0.1 + cv2.getTrackbarPos('k2', 'Bars') / 10000.0
     k3 = dist[0, 4] - 0.01 + cv2.getTrackbarPos('k3', 'Bars') / 100000.0
 
-    new_dist = np.array([[k1, k2, dist[2], dist[3], k3]],
+    new_dist = np.array([[k1, k2, dist[0][2], dist[0][3], k3]],
                         dtype=np.float)
 
     h, w = img.shape[:2]
@@ -87,7 +91,7 @@ while cap.isOpened():
     dst = dst[y:y + h, x:x + w]
 
     cv2.imshow('calibrated', dst)
-    cv2.imshow('original', gray)
+    cv2.imshow('original', img)
 
     mean_error = 0
     for i in range(len(objpoints)):
