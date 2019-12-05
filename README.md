@@ -31,15 +31,15 @@ The process will be continued till the app reaches final stage of maturity.
 
 -  [x] Camera calibration for images.
 -  [x] Parameter variations and tuning.
--  [ ] Finding k1, k2, k3 for specific screen.
+-  [x] Finding k1, k2, k3 for specific screen.
 -  [ ] Optimizing Image Processing algorithm for better visuals.
--  [ ] Merging modules together.
+-  [x] Merging modules together.
 -  [ ] Threading and further optimizations.
   
 ### Hardware:
 -  [x] Get the VR headset
--  [ ] Get the Screen 
--  [ ] Running Codes in RPi + Camera and benchmarking
+-  [x] Get the Screen 
+-  [x] Running Codes in RPi + Camera and benchmarking
 -  [ ] Adding driver/dependancies for Screen
 -  [ ] IR LED lighting setup
 -  [ ] 3D casing enclosure.
